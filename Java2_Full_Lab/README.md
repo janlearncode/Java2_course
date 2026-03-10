@@ -8,7 +8,7 @@ I used to think GitHub was a social network back in 2022 (lol 🤡), but now I'm
 * 🎓 **Major:** Software Engineering @ Eastern International University (EIU).
 * ✍️ **Creative Side:** Digital artist & OC creator (Jan Genesis).
 * 🇬🇧 **English:** IELTS 6.5 (Reading/Listening are okay, Speaking is a work in progress 💀).
-* 🦎 **Fun Fact:** Proud owner of a *Calotes bachae* named Bachae.
+* 🦎 **Fun Fact:** Proud owner of a lizard *Calotes bachae* named Smurf.
 
 ## 📂 What's Inside?
 This project is organized by weekly packages as the excercises I have done. It's clean, structured, and (hopefully) bug-free:
