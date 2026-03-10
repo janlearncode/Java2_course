@@ -1,4 +1,4 @@
-# ☕ Java 2: The Full Lab Chronicles 
+# ☕ Java 2: The Full Lab  
 
 Hello, I'm **Jan (Janexys)**, a Software Engineering student at EIU. This repository is basically my learning progress and brain dump for everything related to **Java 2**. 
 
@@ -23,11 +23,6 @@ This project is organized by weekly packages as the excercises I have done. It's
 * **Editor:** VS Code (Still learning the ropes, but we're getting there).
 * **Language:** Java 17+.
 
-## 🚀 How to Run
-1. Clone this repo (if you're brave enough).
-2. Open it in VS Code.
-3. Make sure you have the **Java Extension Pack** installed.
-4. Hit the **Run** button and pray for no Red Lines.
 
----
-*“Coding is just another form of art, except the canvas screams at you when you make a mistake.”* 🐙
+
+
