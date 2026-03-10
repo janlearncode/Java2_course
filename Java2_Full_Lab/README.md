@@ -1,6 +1,6 @@
 # ☕ Java 2: The Full Lab Chronicles 
 
-Hello, I'm **Jan (Janexys)**, a Software Engineering student at EIU. This repository is basically my survival guide and brain dump for everything related to **Java 2**. 
+Hello, I'm **Jan (Janexys)**, a Software Engineering student at EIU. This repository is basically my learning progress and brain dump for everything related to **Java 2**. 
 
 I used to think GitHub was a social network back in 2022 (lol 🤡), but now I'm actually using it to keep my code from disappearing into the void.
 
