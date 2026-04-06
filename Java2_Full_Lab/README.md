@@ -2,12 +2,12 @@
 
 Hello, I'm **Jan (Janexys)**, a Software Engineering student at EIU. This repository is basically my learning progress and brain dump for everything related to **Java 2**. 
 
-I used to think GitHub was a social network back in 2022 (lol 🤡), but now I'm actually using it to keep my code from disappearing into the void.
+I used to think GitHub was a social network back in 2022 🤡, but now I'm actually using it to keep my code from disappearing into the void.
 
 ## 📌 About Me
 * 🎓 **Major:** Software Engineering @ Eastern International University (EIU).
-* ✍️ **Creative Side:** Digital artist & OC creator (Jan Genesis).
-* 🇬🇧 **English:** IELTS 6.5 (Reading/Listening are okay, Speaking is a work in progress 💀).
+* ✍️ **Creative Side:** Digital artist & OC creator.
+* 🇬🇧 **English:** IELTS 6.5
 * 🦎 **Fun Fact:** Proud owner of a lizard *Calotes bachae* named Smurf.
 
 ## 📂 What's Inside?
