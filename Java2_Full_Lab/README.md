@@ -4,7 +4,7 @@ Hello, I'm **Jan (Janexys)**, a Software Engineering student at EIU. This reposi
 
 I used to think GitHub was a social network back in 2022 🤡, but now I'm actually using it to keep my code from disappearing into the void.
 
-## 📌 About Me
+## 📌 About Maself
 * 🎓 **Major:** Software Engineering @ Eastern International University (EIU).
 * ✍️ **Creative Side:** Digital artist & OC creator.
 * 🇬🇧 **English:** IELTS 6.5
