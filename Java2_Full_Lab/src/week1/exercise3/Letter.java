@@ -1,49 +1,54 @@
 package week1.exercise3;
+
 import java.util.Scanner;
 
+/* Question: A and B have known each other for many years, they often write to each other. A divide his letter into two parts and the second part starts withs some letters which are also at the end of the first parts,
+
+The letter is very long, so B wants you to find the shortest possible result that is the content of the letter A sent.
+
+Input
+Including 2 lines:
+
++ The first line is the content of first part.
+
++ The second line is the content of the second part.
+
+Each section consists of only latin characters and contains no spaces. 
+
+Output
+The shortest possible length of the letter */
 public class Letter {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // 1. Nhập vào 2 đoạn thư (Dùng next() thay vì nextLine() vì đề bảo không có
-        // khoảng trắng)
+        // user enter the first part of the letter
         String part1 = sc.next();
+        // enter the second part
         String part2 = sc.next();
 
-        // 2. Tính tổng chiều dài 2 đoạn nếu ghép nối tiếp bình thường (chưa trừ phần bị
-        // trùng)
+        // calculate the total length of both parts
         int totalLetter = part1.length() + part2.length();
 
-        // 3. Khởi tạo biến lưu kỷ lục: "Số chữ cái trùng khớp nhiều nhất"
+        // the variable to store the total number of same characters form to parts
         int overLap = 0;
-
-        // 4. Vòng lặp dò tìm: Gọi 'i' là SỐ LƯỢNG CHỮ CÁI đem ra cắt thử.
-        // i bắt đầu bằng 1 (thử cắt 1 chữ).
-        // Điều kiện dừng: i không được lớn hơn chiều dài của đoạn thư ngắn nhất (vì
-        // phần trùng tối đa chỉ bằng cái thư ngắn nhất thôi)
+        // compare all character of two parts, stop when the times of loop is larger
+        // than the
+        // length of any part
         for (int i = 1; i <= part1.length() && i <= part2.length(); i++) {
 
-            // --- BƯỚC CẮT ĐUÔI THƯ 1 ---
-            // part1.length() - i: Công thức để lùi từ cuối chuỗi lên 'i' bước.
-            // Ví dụ part1 dài 16 chữ. i = 4. Nó sẽ cắt từ vị trí số 12 hốt trọn 4 chữ cuối
-            // cùng.
+            // take the tail of the 1st part
             String last = part1.substring(part1.length() - i);
 
-            // --- BƯỚC CẮT ĐẦU THƯ 2 ---
-            // substring(0, i): Cắt từ vị trí đầu tiên (index 0) và lấy đúng 'i' chữ cái.
+            // take the head of the 2nd part
             String first = part2.substring(0, i);
 
-            // --- BƯỚC SO SÁNH ---
-            // Nếu cục "đuôi" vừa cắt ra giống y đúc cục "đầu"
+            // if the current tail is same to head, there is one more overlap character
             if (last.equals(first)) {
-                // Thì ghi nhận lại số 'i' này vào kỷ lục.
-                // Vì vòng lặp này 'i' cứ tăng dần lên (1, 2, 3...), nên cái chữ 'i' cuối cùng
-                // lọt được vào khối if này chắc chắn là con số trùng khớp LỚN NHẤT.
+
                 overLap = i;
             }
         }
-
-        // 5. In kết quả cuối: Tổng số chữ ban đầu TRỪ ĐI phần bị trùng lặp lại ở giữa.
+        // substract the number of overLap character between 2 letters
         System.out.println(totalLetter - overLap);
     }
 }

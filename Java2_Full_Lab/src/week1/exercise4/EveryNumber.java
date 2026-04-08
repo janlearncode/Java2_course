@@ -1,32 +1,46 @@
 package week1.exercise4;
+
 import java.util.Scanner;
 
+/* Question: Check if array of m numbers have every number from 1..n
+
+Input
+T: Number of testcases (1 <= T <= 20)
+
+For each testcase:
+
++ 2 integers m and n (1 <= m, n <= 10^5)
+
++ m integers ai (ai <= 10^9, 0<=i < m)
+
+Output
+For each testcase, print "Yes" if array has every number from 1..n, otherwise print "No" (Without quote) */
 public class EveryNumber {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // 1. Nhập số lượng bộ dữ liệu (Test Case)
-        if (!sc.hasNextInt()) return; 
+        // input the number of testCase
         int testCase = sc.nextInt();
 
         for (int i = 1; i <= testCase; i++) {
-            boolean flag = true;
-            
-            // 2. Gọi hàm saveNumber để vừa nhập dữ liệu vừa "điểm danh" luôn
+            // create the flag, suppose that the flag is true because
+            // the array satified the condition
+            boolean isHavingAll = true;
+
+            // create an array method, explain in below
             int array[] = saveNumber();
 
-            // 3. KIỂM TRA TỜ PHIẾU ĐIỂM DANH:
-            // array.length chính là (toN + 1). Ta quét từ 1 đến toN.
+            // fast checking, if there is an element form 1 to N that not exist
+            // in the given array, it fails the condition, conclude this array
             for (int j = 1; j < array.length; j++) {
-                // Nếu có bất kỳ ô nào bằng 0 -> Số đó chưa từng xuất hiện!
+
                 if (array[j] == 0) {
-                    flag = false; // Đánh dấu là thiếu quân số
-                    break;        // Thiếu 1 ông là đủ kết luận rồi, nghỉ sớm!
+                    isHavingAll = false;
+                    break;
                 }
             }
 
-            // 4. CHỐT ĐƠN:
-            if (flag == false) {
+            if (isHavingAll == false) {
                 System.out.println("No");
             } else {
                 System.out.println("Yes");
@@ -35,27 +49,24 @@ public class EveryNumber {
     }
 
     public static int[] saveNumber() {
-        // M: Số lượng con số sẽ nhập vào
-        int length = sc.nextInt(); 
-        // N: Bộ số cần kiểm tra (từ 1 đến N)
-        int toN = sc.nextInt();
+        // enter the length of the array
+        int length = sc.nextInt();
+        // enter the upper bound
+        int toNumberN = sc.nextInt();
 
-        // TẠO TỜ PHIẾU ĐIỂM DANH (Mảng đánh dấu):
-        // Tại sao lại là toN + 1? Để index cao nhất của mảng khớp đúng với số toN.
-        int arrayMain[] = new int[toN + 1];
+        int arrayMain[] = new int[toNumberN + 1];
 
         for (int i = 0; i < length; i++) {
             int element = sc.nextInt();
-            
-            // CHỈ QUAN TÂM NHỮNG Ô TRONG PHẠM VI 1 ĐẾN N:
-            // Những số lớn hơn N thì kệ nó, không nằm trong bộ bài cần kiểm tra.
-            if (element <= toN && element >= 1) {
-                // ĐÁNH DẤU: Thấy số nào thì cộng 1 vào ô có số thứ tự đó.
-                // Ví dụ: Nhập số 3 thì ô arrayMain[3] sẽ tăng lên.
+
+            // using Frequency Array to count the time exist of one element in array
+            // checking if the element itself is smaller than the bound and larger than 1
+            if (element <= toNumberN && element >= 1) {
+
                 arrayMain[element]++;
             }
         }
-        // Trả tờ phiếu điểm danh đã được đánh dấu xong xuôi về cho hàm main.
+        // bring the result back to the main class
         return arrayMain;
     }
 }

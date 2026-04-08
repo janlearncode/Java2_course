@@ -7,54 +7,52 @@ public class Triangle {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        // 1. Nhập số lượng phần tử N
+        // user input:
         int numberOfInteger = sc.nextInt();
-        
-        // Tạo mảng có độ dài N
+
+        // create the array with its length = number of int
         int numberList[] = new int[numberOfInteger];
-        
-        // Vòng lặp nạp các con số vào mảng
+
+        // enter those int in the array
         for (int i = 0; i < numberList.length; i++) {
             numberList[i] = sc.nextInt();
         }
 
-        // 2. SẮP XẾP MẢNG TĂNG DẦN (Cực kỳ quan trọng!)
-        // Việc sắp xếp giúp ta chỉ cần check 1 điều kiện duy nhất: (cạnh nhỏ + cạnh trung > cạnh lớn)
+        // MOST IMPORTANT: sorted that array to increasing
+        // This allow us to check only one condition: (smaller1 + smaller2) > bigger =>
+        // one triangle
         Arrays.sort(numberList);
 
         int triangle = 0;
 
-        // 3. BỘ BA VÒNG LẶP "BẬC THANG" - Không bao giờ Out of Bound
-        
-        // Vòng lặp i: Đại diện cho cạnh nhỏ nhất.
-        for (int i = 0; i < numberList.length; i++) {
-            
-            // Vòng lặp j: Đại diện cho cạnh ở giữa. 
-            // Bắt đầu từ i + 1 để không chọn trùng con số ở vị trí i.
-            for (int j = i + 1; j < numberList.length; j++) {
-                
-                // Vòng lặp k: Đại diện cho cạnh lớn nhất.
-                // Bắt đầu từ j + 1 để không chọn trùng i và j.
-                for (int k = j + 1; k < numberList.length; k++) {
-                    
-                    /* TẠI SAO KHÔNG OUT OF BOUND?
-                       Bà nhìn điều kiện dừng: 'k < numberList.length'.
-                       Dù k = j + 1 hay j = i + 1, thì Java luôn check điều kiện này TRƯỚC khi chạy thân vòng lặp.
-                       Nếu i nằm ở cuối mảng -> j sẽ vượt index -> điều kiện 'j < length' sai -> vòng lặp j và k KHÔNG CHẠY.
-                       Vậy nên nó luôn dừng lại đúng lúc trước khi chạm vách!
-                    */
+        // The triple stairs loop (nested loop) - never out of bound
 
-                    // 4. KIỂM TRA ĐIỀU KIỆN TAM GIÁC
-                    // Vì đã sort nên numberList[i] <= numberList[j] <= numberList[k]
-                    // Ta chỉ cần check: Tổng 2 thằng bé có thắng được thằng lớn nhất không?
+        // The outer loop - i will take the smallest int aka smaller1
+        for (int i = 0; i < numberList.length; i++) {
+
+            // The middle one - j will the the smaller2
+            // start form i + 1 so it will not overlap the previous int
+            for (int j = i + 1; j < numberList.length; j++) {
+
+                // The innermost loop, k will take the biggest one
+                // start form j + 1 so it will not overlap smaller1 and 2
+                for (int k = j + 1; k < numberList.length; k++) {
+
+                    /*
+                     * The reason why not out of bound when j & k is the int behind i:
+                     * They are the conditions, if i is the last element in array => so j & k
+                     * not exist => those for loops breaks
+                     */
+
+                    // checking the isTriangle condition
                     if (numberList[i] + numberList[j] > numberList[k]) {
-                        triangle++; // Nếu thắng, đếm thêm 1 tam giác hợp lệ
+                        triangle++;
                     }
                 }
             }
         }
-        
-        // 5. In ra kết quả cuối cùng
+
+        // print out the last result
         System.out.println(triangle);
     }
 }
